@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Login | Register</ion-title>
+    <ion-buttons slot="start">
+      <ion-menu-button [class]="isAuthenticated || isGuest? 'menu-enabled' : 'menu-disabled'" [disabled]="isAuthenticated"></ion-menu-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-align-items-center ion-padding ion-text-center">
+
+  <div class="content-inner">
+    
+
+   
+      <div class="logintext">
+      <ion-img src="/assets/pillpocket_logo.png"></ion-img>
+
+      <h1>Willkommen!</h1>  <h4>Verwende einen Account für mehr Features!</h4> 
+      
+      </div>
+   
+
+    <div id="login-container">
+      <ion-button (click)="login()">Login/Registrieren</ion-button>
+      <ion-button (click)="this.skipLogin()" class="footer-button">Überspringen</ion-button>
+    </div>
+    
+  </div>
+  
+  
+</ion-content>

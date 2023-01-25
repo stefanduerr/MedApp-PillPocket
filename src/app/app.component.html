@@ -1,0 +1,52 @@
+<ion-app [class.dark-theme]="darkTheme">
+
+  <ion-split-pane contentId="main-content">
+    <ion-menu (ionWillOpen)="setMenuIsOpen(true)" (ionWillClose)="setMenuIsOpen(false)" contentId="main-content" type="overlay">
+      <ion-content id="menu-ion-content">
+        <ion-list id="inbox-list">
+          <ion-list-header>Menü</ion-list-header>
+          <ion-note *ngIf="isGuest || userProfile">{{isGuest ? "Gast-Account" : userProfile.email}}</ion-note>
+
+          <ion-menu-toggle auto-hide="false" *ngFor="let p of appPages; let i = index">
+
+            <ion-item *ngIf="p.condition == undefined || p.condition" routerDirection="forward" [routerLink]="[p.url]"
+              (click)="p.action()" lines="none" detail="false" routerLinkActive="selected">
+              <ion-icon slot="start" [ios]="p.icon + '-outline'" [md]="p.icon + '-sharp'"></ion-icon>
+              <ion-label>{{ p.title }}</ion-label>
+            </ion-item>
+
+          </ion-menu-toggle>
+
+          <ion-menu-toggle auto-hide="false">
+
+            <ion-item *ngIf="!isAuthenticated" routerDirection="root" [routerLink]="['../login-register']" lines="none"
+              detail="false" routerLinkActive="selected">
+              <ion-icon slot="start" [ios]="'log-in-outline'" [md]="'log-in-sharp'"></ion-icon>
+              <ion-label>Login</ion-label>
+            </ion-item>
+
+            <ion-item *ngIf="isAuthenticated" (click)="logoutAttempt()" lines="none" detail="false"
+              routerLinkActive="selected">
+              <ion-icon slot="start" [ios]="'log-out-outline'" [md]="'log-in-sharp'"></ion-icon>
+              <ion-label>Logout</ion-label>
+            </ion-item>
+
+            <ion-item *ngIf="isGuest" (click)="logoutGuest()" lines="none" detail="false" routerLinkActive="selected">
+              <ion-icon slot="start" [ios]="'log-out-outline'" [md]="'log-in-sharp'"></ion-icon>
+              <ion-label>Gast Löschen</ion-label>
+            </ion-item>
+
+          </ion-menu-toggle>
+
+          <ion-item lines="none">
+            <ion-icon slot="start" name="moon-outline"></ion-icon>
+            <ion-label>Dark Mode</ion-label>
+            <ion-toggle [(ngModel)]="darkTheme" (ionChange)="toggleDarkMode($any($event).detail.checked)"></ion-toggle>
+          </ion-item>
+
+        </ion-list>
+      </ion-content>
+    </ion-menu>
+    <ion-router-outlet id="main-content"></ion-router-outlet>
+  </ion-split-pane>
+</ion-app>

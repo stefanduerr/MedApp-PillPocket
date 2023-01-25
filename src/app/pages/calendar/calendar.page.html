@@ -1,0 +1,104 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Kalender
+    </ion-title>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-segment [(ngModel)]="calendar.mode" class="header-sections">
+    <ion-segment-button value="month">
+      <ion-label>Monat</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="week">
+      <ion-label>Woche</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="day">
+      <ion-label>Tag</ion-label>
+    </ion-segment-button>
+  </ion-segment>
+
+  <ion-row>
+    <!-- Move a month/week/day back -->
+    <ion-col size="2">
+      <ion-button fill="clear" (click)="back()">
+        <ion-icon name="arrow-back" slot="icon-only"></ion-icon>
+      </ion-button>
+    </ion-col>
+
+    <ion-col size="8" class="ion-text-center">
+      <h2>{{ displayedDateRange }}</h2>
+    </ion-col>
+
+    <!-- Move a month/week/day forward  -->
+    <ion-col size="2">
+      <ion-button fill="clear" (click)="next()">
+        <ion-icon name="arrow-forward" slot="icon-only"></ion-icon>
+      </ion-button>
+    </ion-col>
+  </ion-row>
+  <ion-button (click)="onCreateEvent()" color="success" fill="solid" strong="true" size="small">
+    <ion-icon name="add-circle-outline"></ion-icon>
+    Event erstellen
+  </ion-button>
+  <ion-button (click)="changeEventSource()" color="primary" strong="true" size="small">
+    {{sourceButton}}
+  </ion-button>
+
+  <calendar
+    [eventSource]="calendarSource" 
+    [calendarMode]="calendar.mode" 
+    [currentDate]="calendar.currentDate"
+    (onTitleChanged)="onDisplayedDateRangeChanged($event)" 
+    (onTimeSelected)="onTimeSelected($event)"
+    [startHour]="calendar.startHour" 
+    [endHour]="24" 
+    [step]="30" 
+    [startingDayWeek]="1" 
+    [startingDayMonth]="1"
+    [monthviewDisplayEventTemplate]="template" 
+    [monthviewEventDetailTemplate]="EventDetailTemplate">
+  </calendar>
+
+  <ng-template #template let-view="view" let-row="row" let-col="col">
+    <div [class.with-event]="view.dates[row*7+col].events[0]">
+      {{view.dates[row*7+col].label}}
+      <div class="indicator-container">
+        <div class="event-indicator" *ngFor="let e of view.dates[row*7+col].events; index as i"
+          [ngClass]="{'green': e.type=='mood'}"></div>
+      </div>
+    </div>
+  </ng-template>
+
+  <ng-template #EventDetailTemplate let-showEventDetail="showEventDetail" let-selectedDate="selectedDate"
+    let-noEventsLabel="noEventsLabel" class="eventDetails-container">
+
+    <div class="eventDetailsHeader">
+      <ion-item>Events</ion-item>
+    </div>
+
+    <ion-list class="eventDetails" lines="none">
+      <div *ngIf="!showMood">
+        <ion-item (click)="onEditEvent(event)" *ngFor="let event of selectedDate.events">
+          <ion-label>| {{event.title}}</ion-label>
+          <ion-label>| {{this.formatDate(event.startTime)}}-{{this.formatDate(event.endTime)}}</ion-label>
+          <ion-button (click)="deleteEvent(event, $event)" color="danger">
+            <ion-icon name="trash"></ion-icon>
+          </ion-button>
+        </ion-item>
+      </div>
+
+      <div *ngIf="showMood">
+        <ion-item *ngFor="let mood of selectedDate.events">
+          <ion-label>| {{mood.title}}</ion-label>
+        </ion-item>
+      </div>
+    </ion-list>
+
+  </ng-template>
+
+</ion-content>

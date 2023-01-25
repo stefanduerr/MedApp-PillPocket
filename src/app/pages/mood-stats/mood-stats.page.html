@@ -1,0 +1,62 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Stimmungs Statistik</ion-title>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content [fullscreen]="true">
+
+  <div *ngIf="isLoading" style="display: flex; justify-content: center;align-items: center;height: 100%;">
+    <ion-spinner></ion-spinner>
+  </div>
+
+
+  <div *ngIf="!isLoading">
+
+    <ion-card>
+
+      <!-- <ion-text style="display:flex; justify-content: center; align-content: center; align-items: center; padding: 30px;">
+        Hier ist deine mood-diary Statistik! Wähle einen gewünschten Zeitraum, den du angezeigt bekommen willst. </ion-text>
+         -->
+      <ion-card-header>
+        Zeitspanne:
+      </ion-card-header>
+
+      <ion-card-content id="range-container">
+        <ion-label>{{pinName}}</ion-label>
+        <ion-range min="0" max="5" snaps="true" (ionChange)="updateTime($event)" [pinFormatter]="customFormatter"
+          [pin]="true"></ion-range>
+      </ion-card-content>
+      <!-- 
+        <ion-card-content id="zeitAuswahl">
+          <ion-button fill="outline" (click)="updateTimeOfInterest($event)">2 Wochen</ion-button>
+          <ion-button fill="outline" (click)="updateTimeOfInterest($event)">1 Monat</ion-button>
+          <ion-button fill="outline" (click)="updateTimeOfInterest($event)">6 Monate</ion-button>
+  
+        </ion-card-content> -->
+
+      <ion-card-content id="chart-container">
+        <canvas #lineCanvas></canvas>
+      </ion-card-content>
+
+      <ion-card-content id="diagrammAuswahl">
+        <ion-button fill="outline" disabled="true">
+          <ion-icon name="bar-chart-outline" size="medium"></ion-icon>Soon!
+        </ion-button>
+        <ion-button fill="outline" disabled="true">
+          <ion-icon name="pie-chart-outline" size="medium"></ion-icon>Soon!
+        </ion-button>
+        <!-- <ion-button fill="outline" disabled="true"><ion-icon name="bar-chart-outline" size="medium"></ion-icon>Balken</ion-button>
+        <ion-button fill="outline" disabled="true"><ion-icon name="pie-chart-outline" size="medium"></ion-icon>Donut</ion-button> -->
+
+        <ion-button fill="outline">
+          <ion-icon name="analytics-outline" size="medium"></ion-icon>Linien
+        </ion-button>
+      </ion-card-content>
+    </ion-card>
+  </div>
+</ion-content>

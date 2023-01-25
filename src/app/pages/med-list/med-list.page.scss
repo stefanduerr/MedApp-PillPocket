@@ -1,0 +1,111 @@
+ion-list{
+    background-color: transparent;
+    margin: 10px !important;
+    padding: 10px;
+    z-index: 1;
+}
+
+ion-fab{
+    bottom: 50px;
+    right: 25px;
+}
+
+#archiveButt{
+    position: absolute;
+    width: 100%;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    --background: none;
+    background-color: var(--ion-color-primary);
+    flex-wrap: wrap;
+    position: fixed;
+    bottom: 0px;
+    height: 40px;
+    // border: 1px solid rgb(255, 255, 255);
+    --border: none;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+    margin-bottom: 0px;
+    margin-left: auto;
+}
+
+#medList{
+    min-height: 93%;
+}
+
+ion-item{
+    padding: 15px;
+    margin: 10px;
+    border: 1px solid #ffffff;
+    border-radius: 20px;
+    -webkit-box-shadow: 5px 5px 13px -5px rgba(0, 0, 0, 0.25); 
+    box-shadow: 5px 5px 13px -5px rgba(0,0,0,0.25);
+    z-index: 2;
+    --ion-background-color: rgba(254,254,254, 0.6);
+    background-color: rgba(254,254,254, 0.6);
+}
+
+ion-item ion-button {
+    margin: 5px;
+    height: 35px;
+    width: 35px;
+    z-index: 2;
+}
+
+ion-icon{
+    width: 20px;
+}
+
+.med-name{
+    padding: 15px 25px 15px 10px;
+}
+
+ion-card{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 15px;
+    margin: 10px auto;
+    border: 1px solid #ffffff;
+    border-radius: 20px;
+    -webkit-box-shadow: 5px 5px 13px -5px rgba(0, 0, 0, 0.25); 
+    box-shadow: 5px 5px 13px -2px rgba(0,0,0,0.25);
+    z-index: 2;
+    font-size: 20px;
+    max-width: 450px;
+}
+
+.card-buttons{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: end;
+    // flex: 0 1 auto;
+    justify-content: end;
+    padding: 10px;
+}
+
+.card-text{
+    // flex: 5 1 auto;
+    margin-left: 15px;
+    padding: 10px;
+}
+
+ion-card-title{
+    font-size: 20px !important;
+    margin-bottom: 7px;
+}
+
+ion-card-subtitle{
+    font-size: 13px;
+}
+
+ion-card ion-button{
+    --padding-start: 5px !important; 
+    --padding-end: 5px !important;
+    width: 38px;
+    height: 38px;
+}
+
+

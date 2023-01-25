@@ -1,0 +1,28 @@
+#save{
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    height: 2.8em;
+    margin: 9px 19px 9px 9px
+}
+
+
+
+
+.datetime {
+
+    --background: none;
+    max-height: 115px;
+    justify-content: center;
+}
+
+
+@media (prefers-color-scheme: dark) {
+.eventlist {
+    --ion-item-background: var(--ion-color-step-100);
+}
+.input {
+    --placeholder-color: red;
+    --placeholder-opacity: 0.75;
+}
+}

@@ -1,0 +1,45 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Event erstellen</ion-title>
+    <ion-buttons slot="start">
+      <ion-icon (click)="close()" name="arrow-back-outline"></ion-icon>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+<ion-list class="eventlist">
+  <ion-item>
+    <ion-label>Datum: {{date.getDate()}}.{{(date.getMonth()+1)}}</ion-label>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Titel: </ion-label> <!-- <ion-label *ngIf="emptyTitle" style="color: red">Bitte wähle einen Titel aus!</ion-label> -->
+    <ion-input class="input" [(ngModel)]="event.title" [placeholder]="noTitle"></ion-input>
+  </ion-item>
+  <!-- <ion-item *ngIf="emptyTitle"> -->
+    
+ <!--  </ion-item> -->
+
+  <ion-item>
+    <ion-label>Beschreibung: </ion-label>
+    <ion-input [(ngModel)]="event.desc"></ion-input>
+  </ion-item>
+
+
+  <ion-item>
+    <ion-label>Startzeit: </ion-label>
+    <ion-datetime id="startzeit" locale="de-DE" #startTimePicker value={{this.event.startTime}} presentation="time" (ionChange)="updateStartTime(startTimePicker.value)" class="datetime"></ion-datetime>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Endzeit: </ion-label>
+    <ion-datetime id="startzeit" locale="de-DE" #endTimePicker value={{this.event.endTime}} presentation="time" (ionChange)="updateEndTime(endTimePicker.value)" class="datetime"></ion-datetime>
+  </ion-item>
+
+</ion-list>
+<ion-button (click)="save()" id="save">
+  Speichern
+</ion-button>
+
+</ion-content>

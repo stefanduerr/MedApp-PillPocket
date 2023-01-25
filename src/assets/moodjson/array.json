@@ -1,0 +1,355 @@
+[
+  {
+    "id": 0,
+    "title": "Schmerzen",
+    "isActive": false,
+    "btns": [
+      {
+        "url": "../../assets/moodDiaryImgs/07_Laughter.png",
+        "title": "keine Schmerzen"
+      },
+      {
+        "url": "../../assets/moodDiaryImgs/08_Pokerface.png",
+        "title": "leichte Schmerzen"
+      },
+      {
+        "url": "../../assets/moodDiaryImgs/20_Worry.png",
+        "title": "mittelstarke Schmerzen"
+      },
+      {
+        "url": "../../assets/moodDiaryImgs/13_Breathe.png",
+        "title": "starke Schmerzen"
+      }
+    ]
+  },
+  {
+    "id": 1,
+    "title": "Migräne",
+    "isActive": false,
+    "btns": [
+      {
+        "url": "../../assets/moodDiaryImgs/49_Yes.png",
+        "title": "alles in Ordnung"
+      },
+      {
+        "url": "../../assets/moodDiaryImgs/09_Sad.png",
+        "title": "leichte Migräne"
+      },
+      {
+        "url": "../../assets/moodDiaryImgs/20_Worry.png",
+        "title": "beeinträchtigend starke Migräne"
+      },
+      {
+        "url": "../../assets/moodDiaryImgs/13_Breathe.png",
+        "title": "schlimme Migräne"
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "title": "Stimmung",
+    "isActive": false,
+    "btns": [
+      {
+        "url": "../../assets/moodDiaryImgs/07_Laughter.png",
+        "title": "super drauf"
+      },
+      {
+        "url": "../../assets/moodDiaryImgs/05_Happy.png",
+        "title": "ausgeglichen"
+      },
+      {
+        "url": "../../assets/moodDiaryImgs/08_Pokerface.png",
+        "title": "meh..."
+      },
+      {
+        "url": "../../assets/moodDiaryImgs/20_Worry.png",
+        "title": "nachdenklich"
+      },
+      {
+        "url": "../../assets/moodDiaryImgs/09_Sad.png",
+        "title": "traurig"
+      },
+      {
+        "url": "../../assets/moodDiaryImgs/43_Disgust.png",
+        "title": "mies drauf"
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "title": "Müdigkeit",
+    "isActive": false,
+    "btns": [
+      {
+        "url": "../../assets/moodDiaryImgs/07_Laughter.png",
+        "title": "voll ausgeschlafen"
+      },
+      {
+        "url": "../../assets/moodDiaryImgs/05_Happy.png",
+        "title": "1 Kaffee reicht"
+      },
+      {
+        "url": "../../assets/moodDiaryImgs/18_Sleeping.png",
+        "title": "3 mal Snooze gedrückt"
+      },
+      {
+        "url": "../../assets/moodDiaryImgs/17_Scared.png",
+        "title": "zurück ins Bett!"
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "title": "Ernährung",
+    "isActive": false,
+    "btns": [
+      {
+        "url": "../../assets/moodDiaryImgs/05_Happy.png",
+        "title": "ausgewogen und gesund"
+      },
+      {
+        "url": "../../assets/moodDiaryImgs/20_Worry.png",
+        "title": "Heisshunger!"
+      },
+      {
+        "url": "../../assets/moodDiaryImgs/43_Disgust.png",
+        "title": "kein Appetit"
+      },
+      {
+        "url": "../../assets/moodDiaryImgs/13_Breathe.png",
+        "title": "viel gesnackt"
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "title": "Motivation",
+    "isActive": false,
+    "btns": [
+      {
+        "url": "../../assets/moodDiaryImgs/07_Laughter.png",
+        "title": "hoch motiviert"
+      },
+      {
+        "url": "../../assets/moodDiaryImgs/05_Happy.png",
+        "title": "entspannt und tatkräftig"
+      },
+      {
+        "url": "../../assets/moodDiaryImgs/08_Pokerface.png",
+        "title": "könnte besser laufen"
+      },
+      {
+        "url": "../../assets/moodDiaryImgs/43_Disgust.png",
+        "title": "sehr unmotiviert"
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "title": "Konzentration",
+    "isActive": false,
+    "btns": [
+      {
+        "url": "../../assets/moodDiaryImgs/07_Laughter.png",
+        "title": "supergut"
+      },
+      {
+        "url": "../../assets/moodDiaryImgs/49_Yes.png",
+        "title": "läuft"
+      },
+      {
+        "url": "../../assets/moodDiaryImgs/43_Disgust.png",
+        "title": "mag nicht"
+      },
+      {
+        "url": "../../assets/moodDiaryImgs/18_Sleeping.png",
+        "title": "kann nicht"
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "title": "Schlaf",
+    "isActive": false,
+    "btns": [
+      {
+        "url": "../../assets/moodDiaryImgs/07_Laughter.png",
+        "title": "gut durchgeschlafen"
+      },
+      {
+        "url": "../../assets/moodDiaryImgs/18_Sleeping.png",
+        "title": "zu lang"
+      },
+      {
+        "url": "../../assets/moodDiaryImgs/09_Sad.png",
+        "title": "zu kurz"
+      },
+      {
+        "url": "../../assets/moodDiaryImgs/17_Scared.png",
+        "title": "fiese Albträume"
+      },
+      {
+        "url": "../../assets/moodDiaryImgs/08_Pokerface.png",
+        "title": "ewig wachgelegen"
+      },
+      {
+        "url": "../../assets/moodDiaryImgs/20_Worry.png",
+        "title": "ständig aufgewacht"
+      }
+    ]
+  },
+  {
+    "id": 8,
+    "title": "Monatszyklus",
+    "isActive": false,
+    "btns": [
+      {
+        "url": "../../assets/moodDiaryImgs/13_Breathe.png",
+        "title": "starke Tage"
+      },
+      {
+        "url": "../../assets/moodDiaryImgs/49_Yes.png",
+        "title": "leichte Tage"
+      }
+    ]
+  },
+  {
+    "id": 9,
+    "title": "Libido",
+    "isActive": false,
+    "btns": [
+      {
+        "url": "../../assets/moodDiaryImgs/07_Laughter.png",
+        "title": "alles Super!"
+      },
+      {
+        "url": "../../assets/moodDiaryImgs/20_Worry.png",
+        "title": "schon zu viel.."
+      },
+      {
+        "url": "../../assets/moodDiaryImgs/08_Pokerface.png",
+        "title": "kaum Vorhanden"
+      },
+      {
+        "url": "../../assets/moodDiaryImgs/43_Disgust.png",
+        "title": "gar kein Bock"
+      }
+    ]
+  },
+  {
+    "id": 10,
+    "title": "Stress",
+    "isActive": false,
+    "btns": [
+      {
+        "url": "../../assets/moodDiaryImgs/07_Laughter.png",
+        "title": "voll entspannt"
+      },
+      {
+        "url": "../../assets/moodDiaryImgs/49_Yes.png",
+        "title": "noch im Rahmen"
+      },
+      {
+        "url": "../../assets/moodDiaryImgs/20_Worry.png",
+        "title": "bevorstehende Deadline"
+      },
+      {
+        "url": "../../assets/moodDiaryImgs/30_Sick.png",
+        "title": "Stress pur!!"
+      }
+    ]
+  },
+  {
+    "id": 11,
+    "title": "Sport",
+    "isActive": false,
+    "btns": [
+      {
+        "url": "../../assets/moodDiaryImgs/13_Breathe.png",
+        "title": "Cardio"
+      },
+      {
+        "url": "../../assets/moodDiaryImgs/20_Worry.png",
+        "title": "Kraftsport"
+      },
+      {
+        "url": "../../assets/moodDiaryImgs/05_Happy.png",
+        "title": "zufrieden mit meiner Leistung"
+      },
+      {
+        "url": "../../assets/moodDiaryImgs/50_No.png",
+        "title": "hätte besser laufen können"
+      }
+    ]
+  },
+  {
+    "id": 12,
+    "title": "Alkohol",
+    "isActive": false,
+    "btns": [
+      {
+        "url": "../../assets/moodDiaryImgs/36_Vomited.png",
+        "title": "Party Hard!"
+      },
+      {
+        "url": "../../assets/moodDiaryImgs/07_Laughter.png",
+        "title": "0,0"
+      },
+      {
+        "url": "../../assets/moodDiaryImgs/49_Yes.png",
+        "title": "ein geselliges Gläschen"
+      },
+      {
+        "url": "../../assets/moodDiaryImgs/05_Happy.png",
+        "title": "nicht zu viel, aber auch nicht wenig"
+      }
+    ]
+  },
+  {
+    "id": 13,
+    "title": "Haut",
+    "isActive": false,
+    "btns": [
+      {
+        "url": "../../assets/moodDiaryImgs/07_Laughter.png",
+        "title": "alles gut"
+      },
+      {
+        "url": "../../assets/moodDiaryImgs/43_Disgust.png",
+        "title": "Pickel"
+      },
+      {
+        "url": "../../assets/moodDiaryImgs/08_Pokerface.png",
+        "title": "trocken"
+      },
+      {
+        "url": "../../assets/moodDiaryImgs/20_Worry.png",
+        "title": "fettig"
+      }
+    ]
+  },
+  {
+    "id": 14,
+    "title": "Angstzustände",
+    "isActive": false,
+    "btns": [
+      {
+        "url": "../../assets/moodDiaryImgs/05_Happy.png",
+        "title": "Angstfreier Tag"
+      },
+      {
+        "url": "../../assets/moodDiaryImgs/03_Confused.png",
+        "title": "kleiner, kurzer Panik-/Angstmoment"
+      },
+      {
+        "url": "../../assets/moodDiaryImgs/20_Worry.png",
+        "title": "den ganzen Tag gegrübelt"
+      },
+      {
+        "url": "../../assets/moodDiaryImgs/17_Scared.png",
+        "title": "brauchte Hilfe"
+      }
+    ]
+  }
+]

@@ -1,0 +1,52 @@
+<ion-header>
+
+  <ion-toolbar>
+
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/tabs/homepage"></ion-back-button>
+    </ion-buttons>
+
+    <ion-title>Profil</ion-title>
+
+  </ion-toolbar>
+
+</ion-header>
+
+<ion-content>
+  <div *ngIf="user">
+    <ion-list lines="none">
+      <ion-item>
+        <ion-label position="floating" color="primary">Name</ion-label>
+        <ion-text>{{user.nickname}}</ion-text>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating" color="primary">Email</ion-label>
+        <ion-text>{{user.email}}</ion-text>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating" color="primary">Email bestätigt?</ion-label>
+        <ion-text>{{user.email_verified ? "Bestätigt" : "Nicht bestätigt"}}</ion-text>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating" color="primary">Zuletzt geupdated am</ion-label>
+        <ion-text>{{this.getDate(user.updated_at)}}</ion-text>
+      </ion-item>
+  
+    </ion-list>
+  </div>
+
+  <div *ngIf="!user">
+    <ion-grid style="display: flex; flex-direction: column; justify-content: center; align-items: center; height: 100%;">
+      <ion-row class="ion-justify-content-center">
+
+        <ion-col style="display: flex; flex-direction: column; align-items: center;">
+
+          <ion-spinner name="crescent"></ion-spinner>
+
+        </ion-col>
+
+      </ion-row>
+    </ion-grid>  
+  </div>
+
+</ion-content>

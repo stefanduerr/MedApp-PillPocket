@@ -1,0 +1,53 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Stimmungs Tagebuch</ion-title>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-button (click)="navigateToStatistics()">
+        <ion-icon name="stats-chart-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div *ngIf="!moodCats || !moodCats.length" class="ion-text-center heading">
+    <h2> Du hast momentan keine Stimmungs Kategorien aktiviert! </h2>
+    <ion-button slot="center" [routerLink]="['../../mood-categories/']">Zu den Einstellungen</ion-button>
+  </div>
+
+  <div *ngIf="moodCats && moodCats.length > 0">
+
+    <p class=h1m>
+      <ion-button class="backNav" fill="clear" (click)="moodnav(-1);" slot="icon-only">
+        <ion-icon name="caret-back-outline"></ion-icon>
+      </ion-button>
+      {{currMoodCat.title}}
+      <ion-button class="forwardNav" fill="clear" (click)="moodnav(1);" slot="icon-only">
+        <ion-icon name="caret-forward-outline"></ion-icon>
+      </ion-button>
+    </p>
+
+    <div class="mbuttons">
+      <div class="mbutton" *ngFor="let x of currMoodCat.btns; let i=index" [class.moodchecked]="i==selectedVal"
+        (click)="saveMood(i)">
+
+        <img src={{x.url}} style="width: 80%">
+
+        <div class="titlepos">{{x.title}}</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="mdates" display="flex">
+    <div *ngFor="let i of fulldatem; let j=index">
+      <div class="mdate">
+        <div class="datefield" [class.selectedDate]="currentDate.getDate()==i.getDate()" (click)="loadMoodDay(i)">
+          {{i.getDate() + "." + (i.getMonth() + 1)}} </div>
+      </div>
+    </div>
+  </div>
+
+</ion-content>

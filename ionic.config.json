@@ -1,0 +1,7 @@
+{
+  "name": "PillPocket",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

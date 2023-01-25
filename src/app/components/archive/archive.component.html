@@ -1,0 +1,20 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Archiv</ion-title>
+    <ion-button slot="end" (click)="closeArchive()" fill="clear">
+      <ion-icon name="arrow-down-outline"></ion-icon>
+    </ion-button>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item *ngFor="let med of archivedMeds; let i = index;">
+      {{med.name}}
+      <ion-button slot="end" (click)="activateMed(med)">
+        Aktivieren
+      </ion-button>
+      <ion-button slot="end" (click)="finalDeleteMedicine(med)">Löschen</ion-button>
+    </ion-item>
+  </ion-list>
+</ion-content>

@@ -1,0 +1,96 @@
+#chart-container{
+    min-height: 380px;
+    max-height: 80vh;
+    margin: 0;
+    padding: 10px;
+}
+
+#range-container{
+    padding-bottom: 0;
+}
+
+canvas{
+    padding: 10px;
+}
+
+ion-card{
+    margin: 0;
+    height: 100%;
+    border-radius: 0;
+}
+
+ion-card-header{
+    font-size: 20px;
+}
+
+canvas{
+    height: 100%;
+    min-height: 200px !important;
+}
+
+@media only screen and (orientation: landscape){
+    #chart-container{
+        min-height: 0;
+        height: 75vh;
+        max-height: 75vh;
+    }
+} 
+
+.ion-padding{
+
+    padding: 1px;
+}
+
+#zeitAuswahl{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    margin: 7px;
+    padding-bottom: 0px;
+}
+#diagrammAuswahl{
+    display: flex;
+    justify-content: center;
+}
+   
+ion-icon{
+
+    padding: 2px;
+}
+
+ion-button{
+   
+    width: 33%;
+    min-width: 75px;
+    max-width: 120px;
+    height: 7vw;
+    --border-width: 1px !important;
+    margin: auto 0px;
+    font-size: 11px;
+
+}
+
+ion-button:nth-child(2){
+
+    --border-width: 1px 0px !important;
+    --border-radius: none;
+    margin: auto -2px;
+
+}
+
+ion-button:nth-child(1){
+    --border-radius: 4px 0px 0px 4px !important;
+    --border-bottom-right-radius: 0px !important;
+
+}
+
+ion-button:nth-child(3){
+
+    --border-radius: 0px 4px 4px 0px !important;
+}
+
+ion-icon{
+    margin-right: 4px;
+    
+}

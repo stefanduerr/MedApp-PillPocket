@@ -1,0 +1,73 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+     Meine Medikamente
+    </ion-title>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+  <ion-list lines="none" id="medList">
+    <ion-item-group *ngFor="let doc of takeMeds, let i = index">
+
+      <div *ngIf="doc.active">
+
+        <ion-card class="med-name" (click)="showInfo(doc)">
+          
+          <div class="card-text">
+            <ion-card-title>{{doc.name}}</ion-card-title>
+            <ion-card-subtitle>{{doc.description}}</ion-card-subtitle>
+            <ion-card-subtitle>{{doc.medsOClock.length + "x " + getSubTitleDays(doc)}}<br></ion-card-subtitle>  
+          </div>
+          
+          <div class="card-buttons">
+
+            <ion-button (click)="openMedModal(takeMeds[i], i, $event)" slot="end">
+              <ion-icon name="create-outline"></ion-icon>
+            </ion-button>
+
+            <ion-button (click)="showArchiveAlert(i, $event)" color="danger" slot="end">
+              <ion-icon name="trash"></ion-icon>
+            </ion-button>
+
+          </div>
+
+        </ion-card>
+
+      </div>
+
+    </ion-item-group>
+  </ion-list>
+
+  <ion-button id="archiveButt" (click)="showArchive()" expand="full" size="small">Archiv
+  </ion-button>
+
+  <!-- Sheet Modal -->
+  <ion-list>
+    <ion-item-group *ngFor="let m of archivedMeds, let i = index">
+      
+      <div *ngIf="m.active">
+        <ion-item>
+          <ion-label>Name: {{m.name}}</ion-label>
+          <ion-button (click)="loadDeaktivatedMedicine()" color="medium" slot="end">Archiv</ion-button>
+        </ion-item>
+      </div>
+      
+    </ion-item-group>
+  </ion-list>
+
+  <ion-fab slot="fixed" vertical="bottom" horizontal="end">
+
+    <ion-fab-button
+      (click)="openMedModal({'name': '', 'description': '', 'medsOClock': [{'time': null, 'amount': 0}], 'regularity': [], 'unit': '', 'active': true}, -1, null)"
+      color="success">
+      <ion-icon name="add-outline"></ion-icon>
+    </ion-fab-button>
+
+  </ion-fab>
+
+</ion-content>

@@ -1,0 +1,76 @@
+.filterlistContainer {
+    max-height: 150px;
+    overflow: scroll;
+}
+
+ion-list, div, ion-item{
+    --background: none;
+    background-color: transparent;
+}
+
+.upArrow {
+    text-align: right !important;
+}
+
+.save-button-container{
+    z-index: 10;
+    right: 0;
+    position: fixed;
+    bottom: 0;
+    padding-right: 10px;
+    visibility: visible !important;
+}
+
+.test {
+    margin-left: auto;
+    margin-right: auto;
+
+}
+
+
+.datetime {
+    --background: none;
+    max-height: 115px;
+    justify-content: center;
+}
+
+ion-row {
+    border-bottom: 2px solid var(--ion-color-primary);
+}
+
+.checkboxes {
+    font-family: "Roboto", "Helvetica Neue", sans-serif;
+    
+}
+
+ion-checkbox {
+    padding-right: 3px;
+    padding-top: 3px;
+    margin-top: 3px;
+    margin-right: 3px;
+    --border-radius: 30px !important;
+
+}
+
+.ckboxcol {
+    margin-left: 0px;
+
+}
+
+.ckboxcolR {
+    margin-right: 10px;
+}
+
+.centered {
+    text-align: center;
+    --padding-start: 10px !important; 
+    --padding-end: 10px !important; 
+}
+
+.description {
+    border-top: 2px solid #aeb7ca;
+}
+
+@media only screen and (min-width: 600px) {
+    
+}

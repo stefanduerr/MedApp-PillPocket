@@ -1,0 +1,17 @@
+/* To learn more about this file see: https://angular.io/config/tsconfig. */
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "outDir": "./out-tsc/app",
+    "types": []
+  },
+  "files": [
+    "src/main.ts",
+    "src/polyfills.ts",
+    "src/app/pages/login-register/login-register-routing.module.ts",
+    "src/app/pages/tabs/tabs.module.ts"
+  ],
+  "include": [
+    "src/**/*.d.ts"
+  ]
+}

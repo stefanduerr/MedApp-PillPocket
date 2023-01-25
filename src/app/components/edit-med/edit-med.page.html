@@ -1,0 +1,157 @@
+<ion-header>
+  <ion-toolbar>
+
+    <ion-buttons slot="start">
+      <ion-icon (click)="close()" name="arrow-back-outline"></ion-icon>
+    </ion-buttons>
+
+    <ion-title>{{med.name}}</ion-title>
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form [formGroup]="medForm" (ngSubmit)="submitForm()">
+    <ion-grid>
+
+      <ion-row style="border-bottom: none">
+        <ion-col>
+          <ion-item lines="none">
+            <ion-input (keyup)="onKey()" [(ngModel)]="name" name="name" formControlName="name"
+              placeholder="Titel d. Medikaments (z.B. Mexalen)" required></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+      <ion-row style="border-bottom: none" *ngIf="!searchbarMinimized && vorschlaege.length!=0">
+        <ion-col>
+
+          <ion-list lines="none" class="filterlistContainer">
+            <ion-item *ngFor="let v of vorschlaege, let i = index" (click)="autocomplete(i)">
+              <ion-label>{{v}}</ion-label>
+            </ion-item>
+          </ion-list>
+
+        </ion-col>
+      </ion-row>
+
+      <ion-row style="border-bottom: none" *ngIf="vorschlaege.length!=0">
+        <ion-col class="upArrow">
+          <ion-button fill="clear" (click)="minimizeResults()">
+            <ion-icon slot="icon-only" name="{{iconType}}"></ion-icon>
+          </ion-button>
+        </ion-col>
+      </ion-row>
+
+
+
+      <ion-text *ngIf="isSubmitted && errorControl.name.errors?.required" color="danger">
+        Bitte gib den Namen des Medikaments an
+      </ion-text>
+
+      <ion-row class="description">
+        <ion-col>
+          <ion-item lines="none">
+            <ion-input [(ngModel)]="description" placeholder="Beschreibung" name="beschreibung"
+              formControlName="description"></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col>
+          <ion-item lines="none">
+            <ion-select #select placeholder="Einheit" interface="popover" (ionChange)="selectChanged(select.value)"
+              [value]="currentSelected" [selectedText]="currentSelected" [(ngModel)]="unit" name="unit"
+              formControlName="unit">
+              <ion-select-option *ngFor="let o of options">{{o}}</ion-select-option>
+            </ion-select>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+
+      <ion-text *ngIf="isSubmitted && errorControl.unit.errors?.required" color="danger">
+        Bitte wähle eine Einheit aus
+      </ion-text>
+
+
+      <ion-row class="row1">
+        <ion-col>
+          <ion-list lines="none">
+            <ion-item lines="none">
+              <ion-button value="daily" (click)="selectDaily()">Täglich</ion-button>
+              <ion-button value="customized" (click)="deselectAll()">Zurücksetzen</ion-button>
+            </ion-item>
+            <ion-item class="checkboxes">
+              <ion-col *ngFor="let day of days" class="ckboxcol">
+                <ion-checkbox [(ngModel)]="day.checked" [ngModelOptions]="{standalone: true}"></ion-checkbox>{{day.name}}
+                
+              </ion-col>
+              
+            </ion-item>
+          </ion-list>
+        </ion-col>
+        <ion-text *ngIf="!daycheck" color="danger">Bitte wähle einen Tag aus</ion-text>
+      </ion-row>
+
+      <!-- <ion-row class="checkboxes">
+        <ion-col *ngFor="let day of days" class="ckboxcol">
+          <ion-checkbox [(ngModel)]="day.checked" [ngModelOptions]="{standalone: true}"></ion-checkbox>{{day.name}}
+        </ion-col>
+
+      </ion-row> -->
+
+    </ion-grid>
+
+    <ion-grid class="timeSection">
+      <ion-row *ngFor="let item of medsOClock; index as i">
+        <ion-item lines="none">
+
+          <ion-col size="5">
+            <ion-datetime locale="de-DE" presentation="time" [(ngModel)]="medsOClock[i].time" name="date"
+              [ngModelOptions]="{standalone: true}" class="datetime"></ion-datetime>
+          </ion-col>
+
+          <ion-col size="4">
+            
+            <ion-input type="number" placeholder="Menge" [(ngModel)]="medsOClock[i].amount" name="amount"
+              [ngModelOptions]="{standalone: true}" class="centered"></ion-input>
+              <ion-label class="centered">{{currentSelected}}</ion-label>
+            <!-- <ion-label class="centered">{{currentSelected}}</ion-label> -->
+          </ion-col>
+
+          <ion-col size="4">
+            <ion-button color="danger" (click)="deleteTime(i)">
+              <ion-icon name="trash-outline"></ion-icon>
+            </ion-button>
+          </ion-col>
+
+        </ion-item>
+        
+      </ion-row>
+      <ion-row style="border-bottom: none"><ion-text *ngIf="!amountCheck" color="danger">Bitte wähle eine Menge aus</ion-text></ion-row>
+
+      <ion-row class="ion-align-items-start" style="border-bottom: none">
+        <ion-col size="12" class="ion-text-center">
+
+          <ion-button class="add-button" size="small" (click)="addTime()">
+            <ion-icon name="add-circle"></ion-icon>
+          </ion-button>
+
+        </ion-col>
+      </ion-row>
+
+      <ion-row class="save-button-container" style="border-bottom: none">
+        <ion-col size="12" class="ion-text-end">
+
+          <div class="upArrow">
+            <ion-button type="submit">
+              Speichern
+            </ion-button>
+          </div>
+
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+  </form>
+</ion-content>
